@@ -1,8 +1,8 @@
-# Install script for directory: C:/DATA/Κώδικα Έργα/Double Dispatch pattern for UI
+# Install script for directory: C:/Users/Τάσος/Source/Repos/amachg/Double-Dispatch-pattern-for-UI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/DATA/Κώδικα Έργα/Double Dispatch pattern for UI/out/install/x64-Debug (default)")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/Τάσος/Source/Repos/amachg/Double-Dispatch-pattern-for-UI/out/install/x64-Debug (default)")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/DATA/Κώδικα Έργα/Double Dispatch pattern for UI/out/build/x64-Debug (default)/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Τάσος/Source/Repos/amachg/Double-Dispatch-pattern-for-UI/out/build/x64-Debug (default)/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
