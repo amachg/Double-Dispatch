@@ -1,4 +1,4 @@
-# Double-Dispatch-pattern-for-UI
+# Double Dispatch pattern for User Interfaces in C++
 
 Test code on double dispatch design pattern in a dynamic way (i.e. during runtime).
 
