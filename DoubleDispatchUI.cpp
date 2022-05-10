@@ -3,7 +3,7 @@ Test code on double dispatch design pattern in a dynamic way, during runtime.
 Used to render a board game serie in cli or gui mode.
 Note that C++ cannot directly support double dispatch.
 
-by Tassos 2021
+by Tassos 2022
 */
 
 #include <iostream>
@@ -60,15 +60,15 @@ int main() {
 	Portes por;
 	Plakoto pla;
 
-	Paixnidi *p_TrexonPaixnidi = &por;
-	p_TrexonPaixnidi->renderOn(cli);
-	p_TrexonPaixnidi->renderOn(gui);
+	Paixnidi *p_currentGameType = &por;
+	p_currentGameType->renderOn(cli);
+	p_currentGameType->renderOn(gui);
 
-	p_TrexonPaixnidi = &pla;
-	p_TrexonPaixnidi->renderOn(cli);
-	p_TrexonPaixnidi->renderOn(gui);
+	p_currentGameType = &pla;
+	p_currentGameType->renderOn(cli);
+	p_currentGameType->renderOn(gui);
 
-	printf("Telos\n");
+	printf("Finished Succesfully\n");
     return EXIT_SUCCESS;
 }
 
