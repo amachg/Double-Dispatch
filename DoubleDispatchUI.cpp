@@ -11,64 +11,65 @@ by Tassos 2022
 int main() {
 	struct Renderer;	// forward declaration
 
-	struct Paixnidi {	// pure abstruct game base class 
+	struct GameBase {	// pure abstruct game base class 
 	public:
 		virtual void renderOn(const Renderer& renderer) const = 0;
 	};
 
-	struct Portes; struct Plakoto;	// forward declarations of game types
+	// forward declarations of game types
+	struct GameTypeA;
+	struct GameTypeB;
 
 	struct Renderer { // pure abstruct base class of renderers of games
-		virtual void render(const Portes& p) const noexcept = 0;
-		virtual void render(const Plakoto& p) const noexcept = 0;
+		virtual void render(const GameTypeA& p) const noexcept = 0;
+		virtual void render(const GameTypeB& p) const noexcept = 0;
 	};
 
-	struct Portes : public Paixnidi {	// first derived game class
+	struct GameTypeA : public GameBase {	// first derived game class
 		void renderOn(const Renderer& renderer) const {
 			renderer.render(*this);
 		}
 	};
 
-	struct Plakoto : public Paixnidi {	// second derived game class
+	struct GameTypeB : public GameBase {	// second derived game class
 		void renderOn(const Renderer& renderer) const {
 			renderer.render(*this);
 		}
 	};
-
 
 	struct GUIRenderer : public Renderer {
-		void render(const Portes& p) const noexcept {
-			printf("Render portes on GUI.\n");
+		void render(const GameTypeA& p) const noexcept {
+			printf("Render GameTypeA on GUI.\n");
 		}
-		void render(const Plakoto& p) const noexcept {
-			printf("Render plakoto on GUI.\n");
+		void render(const GameTypeB& p) const noexcept {
+			printf("Render GameTypeB on GUI.\n");
 		}
 	};
 
 	struct CLIRenderer : public Renderer {
-		void render(const Portes& p) const noexcept {
-			printf("Render portes on cli.\n");
+		void render(const GameTypeA& p) const noexcept {
+			printf("Render GameTypeA on cli.\n");
 		}
-		void render(const Plakoto& p) const noexcept {
-			printf("Render plakoto on cli.\n");
+		void render(const GameTypeB& p) const noexcept {
+			printf("Render GameTypeB on cli.\n");
 		}
 	};
 
 	GUIRenderer gui;
 	CLIRenderer cli;
 
-	Portes por;
-	Plakoto pla;
+	GameTypeA a;
+	GameTypeB b;
 
-	Paixnidi *p_currentGameType = &por;
+	GameBase *p_currentGameType = &a;
 	p_currentGameType->renderOn(cli);
 	p_currentGameType->renderOn(gui);
 
-	p_currentGameType = &pla;
+	p_currentGameType = &b;
 	p_currentGameType->renderOn(cli);
 	p_currentGameType->renderOn(gui);
 
-	printf("Finished Succesfully\n");
+	std::cout << "Finished Succesfully\n";
     return EXIT_SUCCESS;
 }
 
