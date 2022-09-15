@@ -70,6 +70,6 @@ int main() {
 	p_currentGameType->renderOn(gui);
 
 	std::cout << "Finished Succesfully\n";
-    return EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }
 
